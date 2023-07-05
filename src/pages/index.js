@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import axios from "axios";
 
-const API_KEY = "e77eaace93c74f278851f97e57f639a1";
-const API_URL = "https://api.spoonacular.com";
+const API_KEY = process.env.API_KEY;
+const API_URL = process.env.API_URL;
 
 export async function getServerSideProps() {
     const recipeReq = await axios.get(`${API_URL}/recipes/random?apiKey=${API_KEY}`);
